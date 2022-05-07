@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <div class="sidebar">
+        <h1 class="sidebar__title">یادداشت</h1>
+        <ul class="sidebar__notes">
+          <li class="sidebar__note note">
+            <h2 class="note__title">عنوان یادداشت</h2>
+            <p class="note__content">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که
+            </p>
+            <p class="note__meta">دوشنبه 1400/02/13 ساعت 00:30</p>
+          </li>
+          <li class="sidebar__note note">
+            <h2 class="note__title">عنوان یادداشت</h2>
+            <p class="note__content">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که
+            </p>
+            <p class="note__meta">دوشنبه 1400/02/13 ساعت 00:30</p>
+          </li>
+          <li class="sidebar__note note">
+            <h2 class="note__title">عنوان یادداشت</h2>
+            <p class="note__content">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که
+            </p>
+            <p class="note__meta">دوشنبه 1400/02/13 ساعت 00:30</p>
+          </li>
+
+          <li class="sidebar__note note note--active">
+            <h2 class="note__title">عنوان یادداشت</h2>
+            <p class="note__content">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که
+            </p>
+            <p class="note__meta">دوشنبه 1400/02/13 ساعت 00:30</p>
+          </li>
+
+          <li class="sidebar__note note">
+            <h2 class="note__title">عنوان یادداشت</h2>
+            <p class="note__content">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که
+            </p>
+            <p class="note__meta">دوشنبه 1400/02/13 ساعت 00:30</p>
+          </li>
+
+          <li class="sidebar__note note">
+            <h2 class="note__title">عنوان یادداشت</h2>
+            <p class="note__content">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که
+            </p>
+            <p class="note__meta">دوشنبه 1400/02/13 ساعت 00:30</p>
+          </li>
+        </ul>
+        <div class="sidebar__action">
+          <button id="add-note" type="button">افزودن یادداشت</button>
+        </div>
+      </div>
+      <main id="app">
+        <div class="form-group">
+          <input
+            class="form-control title"
+            type="text"
+            placeholder="عنوان یادداشت"
+          />
+          <textarea
+            class="form-control content"
+            placeholder="محتوای یادداشت"
+          ></textarea>
+        </div>
+      </main>
+    </div>
+    <script src="scripts.js" type="module"></script>
+  </body>
+</html>
