@@ -38,7 +38,7 @@ body,
   font-size: 1.6rem;
 }
 
-.layout {
+#app {
     display: flex;
     min-height: 100vh;
     background-color: var(--color-bg);
@@ -126,13 +126,18 @@ body,
     padding: 1rem 0 0;
 }
 
-#add-note{
+.add-note{
     padding: .5rem 1rem;
     background-color: aquamarine;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
+
+.add-note:hover{
+  background-color: var(--color-white);
+}
+
 .menu-item:hover, .menu-item.active{
     background-color: var(--color-bg);
     border-radius: 5px;
@@ -189,12 +194,12 @@ body,
     transform: rotate(-180deg);
 }
 
-#app{
+#main{
     flex: 6;
     padding: 1.5rem;
 }
 
-#app h1{
+#main h1{
     font-size: 3rem;
 }
 
