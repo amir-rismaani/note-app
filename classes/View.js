@@ -44,4 +44,32 @@ export default class View {
       });
     });
   }
+
+  #createNoteElement(noteObj) {
+    const { id, title, content, updated } = noteObj;
+    const MAX_LENGTH_CONTENT = 50;
+    const noteElement = `
+    <li class="sidebar__note note" data-note-id="${id}">
+      <h2 class="note__title">${title}</h2>
+      <p class="note__content">
+      ${content.length > MAX_LENGTH_CONTENT ? "..." : ""}
+      </p>
+      <p class="note__meta">${new Date(updated).toLocaleString("fa", {
+        dateStyle: "full",
+        timeStyle: "short",
+      })}</p>
+    </li>
+    `;
+    return noteElement;
+  }
+
+  updateNoteLists(notes) {
+    const notesContainer = this.root.querySelector(".sidebar__notes");
+    notesContainer.innerHTML = "";
+    let noteLists = "";
+    notes.forEach((note) => {
+      noteLists += this.#createNoteElement(note);
+    });
+    notesContainer.innerHTML = noteLists;
+  }
 }
