@@ -99,17 +99,24 @@ body,
     border-bottom: 1px solid var(--color-gray);
 }
 
-.note__title{
-
+.sidebar__header{
+    display: flex;
+    justify-content: space-between;
+}
+.note__trash{
+    background-color: var(--color-white);
+    color: var(--color-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
 }
 
-.note__content{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    overflow-wrap: break-word;
+.note__trash i{
+    font-size: 1.3rem;
 }
-
 .note--active{
     background-color: var(--color-white);
 }
