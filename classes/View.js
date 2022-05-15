@@ -96,4 +96,18 @@ export default class View {
         });
     });
   }
+
+  updateActiveNote(noteId) {
+    const notesElement = this.root.querySelectorAll(".sidebar__note");
+    const activeNote = this.root.querySelector(`[data-note-id="${noteId}"]`);
+    const inputTitle = this.root.querySelector(".input-title");
+    const inputContent = this.root.querySelector(".input-content");
+
+    notesElement.forEach((noteElement) =>
+      noteElement.classList.remove("note--active")
+    );
+    activeNote.classList.add("note--active");
+    inputTitle.value = activeNote.querySelector(".note__title").textContent;
+    inputContent.value = activeNote.querySelector(".note__content").textContent;
+  }
 }

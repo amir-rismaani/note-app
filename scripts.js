@@ -11,6 +11,7 @@ const view = new View(app, {
   },
   onNoteSelect(noteId) {
     console.log("Note has been selected.", noteId);
+    view.updateActiveNote(noteId);
   },
   onNoteDelete(noteId) {
     console.log("Note has been deleted.", noteId);
