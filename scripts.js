@@ -1,6 +1,6 @@
 import Notes from "./classes/Notes.js";
 import View from "./classes/View.js";
-// console.log("notesssssssss", Notes.getAllNotes());
+
 const app = document.getElementById("app");
 const view = new View(app, {
   onAddNote() {
@@ -11,7 +11,6 @@ const view = new View(app, {
   },
   onNoteSelect(noteId) {
     console.log("Note has been selected.", noteId);
-    view.updateActiveNote(noteId);
   },
   onNoteDelete(noteId) {
     console.log("Note has been deleted.", noteId);
@@ -19,3 +18,4 @@ const view = new View(app, {
 });
 
 view.updateNoteLists(Notes.getAllNotes());
+view.updateActiveNote(Notes.getAllNotes()[1]);
