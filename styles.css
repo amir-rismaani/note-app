@@ -118,7 +118,7 @@ body,
     font-size: 1.3rem;
 }
 .note--active{
-    background-color: var(--color-white);
+    background-color: var(--color-bg);
 }
 
 .note--active .note__title,
@@ -229,6 +229,6 @@ body,
     border: 1px solid var(--color-primary);
 }
 
-.form-control.content{
+.form-control.input-content{
     flex-grow: 1;
 }
