@@ -38,6 +38,10 @@ body,
   font-size: 1.6rem;
 }
 
+textarea{
+    resize: none;
+}
+
 #app {
     display: flex;
     min-height: 100vh;

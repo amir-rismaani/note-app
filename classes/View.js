@@ -11,16 +11,16 @@ export default class View {
             </div>
         </div>
         <main id="main">
-            <div class="form-group">
-            <input
-                class="form-control input-title"
-                type="text"
-                placeholder="عنوان یادداشت"
-            />
-            <textarea
-                class="form-control input-content"
-                placeholder="محتوای یادداشت"
-            ></textarea>
+            <div class="form-group notes-input-container">
+              <input
+                  class="form-control input-title"
+                  type="text"
+                  placeholder="عنوان یادداشت"
+              />
+              <textarea
+                  class="form-control input-content"
+                  placeholder="محتوای یادداشت"
+              ></textarea>
             </div>
         </main>
     `;
@@ -45,6 +45,8 @@ export default class View {
         this.onNoteEdit(newInputTitle, newInputContent);
       });
     });
+
+    this.notesInputContainerVisibility(false);
   }
 
   #createNoteElement(noteObj) {
@@ -95,10 +97,10 @@ export default class View {
           this.onNoteDelete(noteId);
         });
     });
+    notesContainer.scrollTop = 0;
   }
 
   updateActiveNote(note) {
-    console.log(note, note.id);
     const notesElement = this.root.querySelectorAll(".sidebar__note");
     const activeNote = this.root.querySelector(`[data-note-id="${note.id}"]`);
     const inputTitle = this.root.querySelector(".input-title");
@@ -111,5 +113,13 @@ export default class View {
     activeNote.classList.add("note--active");
     inputTitle.value = note.title;
     inputContent.value = note.content;
+    this.notesInputContainerVisibility(true);
+  }
+
+  notesInputContainerVisibility(visible) {
+    const notesInputContainer = this.root.querySelector(
+      ".notes-input-container"
+    );
+    notesInputContainer.style.visibility = visible ? "visible" : "hidden";
   }
 }

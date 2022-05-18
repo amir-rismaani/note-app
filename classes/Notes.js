@@ -42,6 +42,7 @@ export default class Notes {
   static save(noteItem) {
     const notes = this.getAllNotes();
     const existNote = notes.find((note) => note.id === noteItem.id);
+
     const updateDate = new Date();
     if (existNote) {
       existNote.title = noteItem.title;
@@ -52,7 +53,6 @@ export default class Notes {
       noteItem.updated = updateDate.toISOString();
       notes.unshift(noteItem);
     }
-
     Storage.set("notes", notes);
   }
 
