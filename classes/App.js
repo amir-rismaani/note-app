@@ -16,7 +16,11 @@ export default class App {
 
     // Set active note
     this.view.notesInputContainerVisibility(this.notes.length > 0);
-    this.activeNote = this.notes[0];
+    this.#setActiveNote(this.notes[0]);
+  }
+
+  #setActiveNote(note) {
+    this.activeNote = note;
     this.view.updateActiveNote(this.activeNote);
   }
 
@@ -38,8 +42,8 @@ export default class App {
         _this.#refreshNotes();
       },
       onNoteSelect(noteId) {
-        _this.activeNote = this.notes.find((note) => note.id == noteId);
-        _this.view.updateActiveNote(_this.activeNote);
+        const note = _this.notes.find((note) => note.id == noteId);
+        _this.#setActiveNote(note);
       },
       onNoteDelete(noteId) {
         Notes.delete(noteId);
