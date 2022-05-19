@@ -56,10 +56,9 @@ export default class Notes {
     Storage.set("notes", notes);
   }
 
-  static delete(noteItem) {
+  static delete(noteId) {
     const notes = this.getAllNotes();
-    const filterdNotes = notes.filter((note) => note.id !== noteItem.id);
-
+    const filterdNotes = notes.filter((note) => note.id != noteId);
     Storage.set("notes", filterdNotes);
   }
 }

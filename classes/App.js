@@ -38,16 +38,13 @@ export default class App {
         _this.#refreshNotes();
       },
       onNoteSelect(noteId) {
-        _this.activeNote = _this.#getNoteById(noteId);
+        _this.activeNote = this.notes.find((note) => note.id == noteId);
         _this.view.updateActiveNote(_this.activeNote);
       },
       onNoteDelete(noteId) {
-        console.log("Note has been deleted.", noteId);
+        Notes.delete(noteId);
+        _this.#refreshNotes();
       },
     };
-  }
-
-  #getNoteById(id) {
-    return this.notes.find((note) => note.id == id);
   }
 }

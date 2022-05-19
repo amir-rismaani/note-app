@@ -30,6 +30,8 @@ export default class View {
     this.onNoteEdit = onNoteEdit;
     this.onNoteSelect = onNoteSelect;
     this.onNoteDelete = onNoteDelete;
+    this.activeNote = null;
+
     const addNoteButton = this.root.querySelector(".add-note");
     const inputTitle = this.root.querySelector(".input-title");
     const inputContent = this.root.querySelector(".input-content");
@@ -42,7 +44,11 @@ export default class View {
       input.addEventListener("blur", () => {
         const newInputTitle = inputTitle.value.trim();
         const newInputContent = inputContent.value.trim();
-        this.onNoteEdit(newInputTitle, newInputContent);
+        if (
+          this.activeNote.title !== newInputTitle ||
+          this.activeNote.content !== newInputContent
+        )
+          this.onNoteEdit(newInputTitle, newInputContent);
       });
     });
 
@@ -101,19 +107,22 @@ export default class View {
   }
 
   updateActiveNote(note) {
-    const notesElement = this.root.querySelectorAll(".sidebar__note");
-    const activeNote = this.root.querySelector(`[data-note-id="${note.id}"]`);
-    const inputTitle = this.root.querySelector(".input-title");
-    const inputContent = this.root.querySelector(".input-content");
+    if (note) {
+      const notesElement = this.root.querySelectorAll(".sidebar__note");
+      const activeNote = this.root.querySelector(`[data-note-id="${note.id}"]`);
+      const inputTitle = this.root.querySelector(".input-title");
+      const inputContent = this.root.querySelector(".input-content");
 
-    notesElement.forEach((noteElement) =>
-      noteElement.classList.remove("note--active")
-    );
+      this.activeNote = note;
+      notesElement.forEach((noteElement) =>
+        noteElement.classList.remove("note--active")
+      );
 
-    activeNote.classList.add("note--active");
-    inputTitle.value = note.title;
-    inputContent.value = note.content;
-    this.notesInputContainerVisibility(true);
+      activeNote.classList.add("note--active");
+      inputTitle.value = note.title;
+      inputContent.value = note.content;
+      this.notesInputContainerVisibility(true);
+    }
   }
 
   notesInputContainerVisibility(visible) {
